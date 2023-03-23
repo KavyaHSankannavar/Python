@@ -1,0 +1,22 @@
+#guess the number
+import random
+
+def guess(x):
+    sec_num=random.randint(1,x)
+    guess=0
+    lives=5
+    while guess!=sec_num and lives>0:
+        guess = int(input("Guess the number: "))
+        if guess<sec_num:
+            print("the number you have guessed is low")
+
+        elif guess>sec_num:
+            print("the number you have guessed is high")
+        lives-=1
+        print("You lost a life to guess")
+    if lives==0:
+        print(f"Sorry, No lives left. You lost and the number was {sec_num}")
+    else:
+        print(f"Yay!!, You guessed the right number {sec_num}")
+
+print(guess(10))
